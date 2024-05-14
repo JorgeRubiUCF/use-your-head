@@ -13,16 +13,24 @@ func _physics_process(delta):
 	# Animations
 	if (velocity.x > 1 || velocity.x < -1):
 		sprite_2d.animation = "running"
+		if(Input.is_action_pressed("hold")):
+			sprite_2d.animation = "pick up running"
 	else:
 		sprite_2d.animation = "idle"
+		if(Input.is_action_pressed("hold")):
+			sprite_2d.animation = "pick up idle"
 	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		if velocity.y > 20 * gravity * delta:
 			sprite_2d.animation = "fall"
+			if(Input.is_action_pressed("hold")):
+				sprite_2d.animation = "pick up fall"
 		else:
 			sprite_2d.animation = "jump"
+			if(Input.is_action_pressed("hold")):
+				sprite_2d.animation = "pick up jump"
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
