@@ -1,7 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxyw4r4ja6fj5"]
+[gd_scene load_steps=16 format=3 uid="uid://cxyw4r4ja6fj5"]
 
 [ext_resource type="Texture2D" uid="uid://dwustb1awdqqy" path="res://Sprite-0001-Sheet.png" id="1_586ib"]
 [ext_resource type="Script" path="res://scenes/playercharacter.gd" id="1_fi3mi"]
+[ext_resource type="Shader" path="res://scenes/playercharacter.gdshader" id="2_2px57"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_socwh"]
+shader = ExtResource("2_2px57")
+shader_parameter/line_color = Color(0.247059, 0.219608, 0.317647, 1)
+shader_parameter/line_thickness = 0.8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1atkn"]
+atlas = ExtResource("1_586ib")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_63oq2"]
 atlas = ExtResource("1_586ib")
@@ -37,6 +47,14 @@ region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oi18c"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1atkn")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_63oq2")
@@ -85,10 +103,11 @@ script = ExtResource("1_fi3mi")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_socwh")
 position = Vector2(172, 548)
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_oi18c")
-animation = &"running"
+animation = &"fall"
 autoplay = "running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
