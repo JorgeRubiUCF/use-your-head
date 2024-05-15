@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk86obv45xgqv"
-path="res://.godot/imported/skelthrow-Sheet.png-f5f7be665382061af5a4290753a701d3.ctex"
+uid="uid://dnlrem1lcjv1e"
+path="res://.godot/imported/dungeon terrain.png-4c2dcb9e062bfc171f8a25a38f1f2d7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://skelthrow-Sheet.png"
-dest_files=["res://.godot/imported/skelthrow-Sheet.png-f5f7be665382061af5a4290753a701d3.ctex"]
+source_file="res://spritesheets/dungeon terrain.png"
+dest_files=["res://.godot/imported/dungeon terrain.png-4c2dcb9e062bfc171f8a25a38f1f2d7e.ctex"]
 
 [params]
 
