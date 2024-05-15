@@ -35,6 +35,10 @@ region = Rect2(0, 0, 18, 18)
 atlas = ExtResource("5_bnby5")
 region = Rect2(18, 0, 18, 18)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3avd7"]
+atlas = ExtResource("5_bnby5")
+region = Rect2(0, 0, 18, 18)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fubaq"]
 atlas = ExtResource("5_bnby5")
 region = Rect2(18, 0, 18, 18)
@@ -54,10 +58,6 @@ region = Rect2(72, 0, 18, 18)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ifs0g"]
 atlas = ExtResource("5_bnby5")
 region = Rect2(90, 0, 18, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3avd7"]
-atlas = ExtResource("5_bnby5")
-region = Rect2(0, 0, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bspyj"]
 atlas = ExtResource("3_osxi4")
@@ -134,6 +134,9 @@ animations = [{
 "speed": 8.0
 }, {
 "frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_3avd7")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fubaq")
 }, {
@@ -149,7 +152,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ifs0g")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_3avd7")
 }],
 "loop": true,
@@ -192,9 +195,8 @@ material = SubResource("ShaderMaterial_socwh")
 position = Vector2(172, 548)
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_oi18c")
-animation = &"running"
+animation = &"pick up running"
 autoplay = "running"
-frame_progress = 0.638841
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(171.938, 551.5)

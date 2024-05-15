@@ -16,16 +16,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	if Input.is_action_pressed("hold"):
+		zoomfactor -= 0.01
+	else:
+		zoomfactor += 0.01
+	
 	zoom.x = lerp(zoom.x, zoom.x * zoomfactor, zoomspeed * delta)
 	zoom.y = lerp(zoom.y, zoom.y * zoomfactor, zoomspeed * delta)
 	
 	zoom.x = clamp(zoom.x, zoomMin, zoomMax)
 	zoom.y = clamp(zoom.y, zoomMin, zoomMax)
 	
-	zoomfactor = clamp(zoomfactor, 0, 1)
-	
-	if Input.is_action_pressed("hold"):
-		zoomfactor -= 0.01
-	else:
-		zoomfactor += 0.01
+	zoomfactor = clamp(zoomfactor, 0.9, 1)
 		
